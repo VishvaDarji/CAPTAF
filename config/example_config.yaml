@@ -1,0 +1,43 @@
+# CAPTAF Pipeline Configuration
+# Generated: Sat May 16 07:02:56 AM UTC 2026
+# POI: P63104
+# Target: P04049
+
+# Output directory
+output_dir: "14-3-3-zeta-RAF1-Phosphopeptide"
+
+samples:
+  - P63104
+
+targets:
+  - P04049_Target
+
+# Input file paths (absolute paths - no copying)
+poi_fasta: "/local/vdarji/thesis_files/P63104.fasta"
+target_fasta: "/local/vdarji/thesis_files/P04049_Target.fasta"
+pdb_file: "/local/vdarji/thesis_files/pdb_files_poi/P63104.pdb"
+
+# Output directories
+output_dirs:
+  ptm_predictions: "ptm_predictions"
+  rsa: "rsa_outputs"
+  dssp: "dssp_outputs"
+  filtered: "filtered_ptms"
+  jsons: "alphafold_inputs"
+  target_ptms: "target_ptm_dir"
+
+# CAPTAF installation paths
+captaf_dir: "/local/vdarji/thesis_files"
+scripts_dir: "/local/vdarji/thesis_files/scripts"
+musitedeep_dir: "/local/vdarji/thesis_files/MusiteDeep_web"
+alphafold3_dir: "/local/vdarji/thesis_files/alphafold3"
+iupred2a_dir: "/local/vdarji/thesis_files/iupred2a"
+ptm_mapping: "/local/vdarji/thesis_files/PTM_to_CCD_mapping.csv"
+
+# Database paths
+mmseqs_db: "/local/vdarji/thesis_files/alphafold3/database/uniref50DB"
+af3_models: "/local/vdarji/thesis_files/af3_models"
+af3_db: "/local/vdarji/thesis_files/alphafold3/database"
+
+# Pipeline options
+use_controls: false
