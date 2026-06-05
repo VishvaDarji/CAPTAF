@@ -1,0 +1,62 @@
+PTM_Type , residue , CCD , Curator-verified chemical name                         
+Methylarginine             , Arg (R)           , `AGM`             , 5-methyl-arginine                                    
+Dimethylation              , Arg (R)           , `2MR`             , n3 n4-dimethylarginine                                      
+S-farnesylation            , Cys (C)           , `FAR`             , farnesyl                                  
+S-geranylgeranylation      , Cys (C)           , `A1CA2`           , n-acetyl-s-geranylgeranyl-l-cysteine
+S-nitrosocysteine          , Cys (C)           , 'SNC'             , S-nitroso-cysteine
+S-nitrosylation            , Cys (C)           , 'SNC'	           , S-NITROSO-CYSTEINE                                   
+Pyroglutamic acid          , Gln (Q)           , `PCA`             , pyroglutamic acid
+Carboxylation              , Glu (E)           , `CGU`             , gamma-carboxy-glutamic acid
+Sulfation                  , Tyr (Y)           , `STY`             , tyrosine-o-sulphonic acid                                     
+Asymmetric dimethylarginine, Arg (R)           ,'DA2'              , ng ng-dimethyl-l-arginine
+N6-acetyllysine             , Lys (K)           , `ALY`            , n(6)-acetyllysine                                      
+Phosphorylation             , Ser (S)           , 'SEP'            , phosphoserine
+Phosphorylation             , Thr (T)           , 'TPO'            , phosphothreonine
+Phosphorylation             , Tyr (Y)           , 'PTR'            , o-phosphotyrosine
+Phosphoserine               , Ser (S)           , `SEP`             , phosphoserine                                       
+Phosphothreonine            , Thr (T)           , `TPO`             , PHOSPHOTHREONINE                                    
+Phosphotyrosine             , Tyr (Y)           , `PTR`             , O-PHOSPHOTYROSINE                                   
+Hydroxylysine               , Lys (K)           , `LYZ`             , 5-HYDROXYLYSINE                                     
+Hydroxyproline              , Pro (P)           , `HYP`             , 4-HYDROXYPROLINE                                    
+S-palmitoyl_cysteine        , Cys (C)           , `P1L`             , S-PALMITOYL-L-CYSTEINE                                 
+Pyrrolidone_carboxylic_acid , Gln (Q)           , 'PCA'             , pyroglutamic acid
+O-linked_glycosylation      , Thr (T)           , `GTH`             , 3-o-glucopyranosyl-threonine-[2-deoxy-2-acetamido-glucopyranoside]
+O-linked_glycosylation      , Ser (S)           , 'TNR'             , o-(2-acetamido-2-deoxy-alpha-d-galactopyranosyl)-l-serine
+N-linked_glycosylation      , Asn (N)           , `NAG`             , 2-acetamido-2-deoxy-beta-d-glucopyranose
+Malonylation                , Cys (C)           , 'MCS'             , malonyl-cysteine
+Succinylation               , Lys (K)           , 'NSK'             , n-succinyl lysine
+Oxidation                   , Trp (W)           , 'NFK'             , n'-formylkynurenine
+Oxidation                   , Cys (C)           , 'OCS'             , cysteinesulfonic acid
+Oxidation                   , Met (M)           , 'SME'             , methionine sulfoxide
+Sulfoxidation               , Met (M)           , 'SME'             , methionine sulfoxide
+Cysteine sulfenic acid      , Cys (C)            , 'CSO'             , s-hydroxycysteine
+Cysteine sulfonic acid      , Cys (C)	         , 'OCS'	     , cysteinesulfonic acid
+Methyllysine                , Lys (K)            , 'MLZ'             , n-methyl-lysine
+Methylation                 , Lys (K)            , 'MLZ'             , n-methyl-lysine
+Dimethyllysine              , Lys (K)            , 'MLY'             , n-dimethyl-lysine
+"N6,N6-dimethyllysine"      , Lys (K)            , 'MLY'             , n-dimethyl-lysine 
+Trimethyllysine             , Lys (K)             , 'M3L'             , Trimethyllysine
+Phosphohistidine            , His (H)             , 'NEP'             , phoshpohistidine
+Phosphorylation             , His (H)             , 'NEP'             , Phosphohistidine
+Methylation , His (H) , 'MHS' , n1-methylated histidine
+Methylation , Met (M) , 'MME' , n-methyl methionine
+Methylation , Gln (Q), 'MEQ' , n5-methylglutamine
+Methylation , Cys (C) , '5U0' , s-farnesyl-l-cysteine methyl ester
+Phosphorylation , Asp (D) , 'PHD' , aspartyl phosphate
+Hydroxylation , Tyr (Y) , 'HTY' , (betar)-beta-hydroxy-d-tyrosine
+Hydroxylation , Trp (W) , 'TRX' , 6-hydroxytryptophan
+Acetylation , Lys (K) , 'ALY' , n6-acetyllysine
+Acetylation , Ser (S) , 'SAC' , n-acetyl-serine
+Acetylation , Met (M) , AME   , n-acetylmethionine
+Acetylation , Ala (A) , 'AYA' , n-acetylalanine
+Acetylation , Pro (P) , 'N8P' , n-acetyl-d-proline
+Acetylation , Met (M) , 'AME' , n-acetylmethionine
+Palmitoylation , Ser (S) , 'O18' , o-palmitoleoyl serine
+Palmitoylation , Gly (G) , '140' , n-palmitoylglycine
+Gamma-carboxyglutamic_acid , Glu (E) , 'CGU' , gamma-carboxy-glutamic acid
+Citrullination , Arg (R) , 'CIR' , citrulline
+Nitration , Tyr (Y) , 'NIY' , meta-nitro-tyrosine
+Methylation , Arg (R) , 'AGM' , 5-methyl-arginine
+Sulfoxidation , Met (M) , 'SME' , methionine sulfoxide
+	
+	
