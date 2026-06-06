@@ -8,7 +8,7 @@
 
 Post-translational modifications (PTMs) play critical roles in regulating protein-protein interactions, but predicting their structural impact remains challenging. CAPTAF addresses this by:
 
-1. **Fetching validated PTM sites** from dbPTM for the Protein of Interest [CONFIRM: also MusiteDeep?]
+1. Fetching validated PTM sites from dbPTM for the target protein and predicting PTM sites for the Protein of Interest using MusiteDeep
 2. **Analyzing structural context** (buried/interface/exposed, ordered/disordered, conserved/variable)
 3. **Generating 8 strategic variants** that sample different PTM contexts
 4. **Predicting structures** with AlphaFold3 for each variant plus baseline and positive controls
