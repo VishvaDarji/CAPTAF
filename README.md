@@ -14,8 +14,6 @@ Post-translational modifications (PTMs) play critical roles in regulating protei
 
 This reduces the combinatorial explosion from 2^N possible PTM combinations to just 8 strategically selected variants, making PTM exploration computationally tractable while maintaining biological relevance.
 
----
-
 ## Key Features
 
 ✅ **Automated PTM retrieval** - Fetches validated PTMs from dbPTM  
@@ -27,8 +25,6 @@ This reduces the combinatorial explosion from 2^N possible PTM combinations to j
 ✅ **One-command execution** - Simple wrapper script handles entire pipeline  
 
 > ⚠️ **AlphaFold3 PTM support limitation:** Not all PTM types are supported. Supported types include Phosphorylation (pSer, pThr, pTyr), Acetylation, and Methylation. **Ubiquitination and SUMOylation are NOT supported** and cannot be modelled. Check `PTM_to_CCD_mapping.csv` for the full list of supported modifications before running.
-
----
 
 ## System Requirements
 
@@ -47,8 +43,6 @@ This reduces the combinatorial explosion from 2^N possible PTM combinations to j
 - Git
 - Wget
 
----
-
 ## Installation
 
 ### Step 1: Clone CAPTAF Repository
@@ -58,8 +52,6 @@ git clone https://github.com/yourusername/captaf.git
 cd captaf
 chmod +x captaf.sh setup_captaf.sh verify_captaf.sh envs/install_envs.sh
 ```
-
----
 
 ### Step 2: Install Conda Environments
 
@@ -74,8 +66,6 @@ This creates:
 - **new_thesis_env**: Main pipeline environment (Snakemake, BioPython, Pandas, etc.)
 - **musite_env**: MusiteDeep PTM prediction (TensorFlow 1.x, Keras)
 - **af3**: AlphaFold3 environment (JAX, Haiku, etc.)
-
----
 
 ### Step 3: Install AlphaFold3
 
@@ -124,8 +114,6 @@ conda deactivate
 
 If the help message displays, AlphaFold3 is correctly installed.
 
----
-
 ### Step 4: Download MMseqs2 Database
 
 ```bash
@@ -146,8 +134,6 @@ mmseqs createindex uniref50DB tmp --threads 8
 cd ../..
 ```
 
----
-
 ### Step 5: Verify Installation
 
 ```bash
@@ -159,8 +145,6 @@ cd ../..
 ./setup_captaf.sh
 # Expected: ✓ CAPTAF is ready to use!
 ```
-
----
 
 ## Before Running
 
@@ -180,8 +164,6 @@ wget https://files.rcsb.org/download/1YCR.pdb \
 
 **Important:** Place PDB files in `pdb_files_poi/` directory within CAPTAF installation, named as `PROTEIN_ID.pdb`
 
----
-
 ## Working with Partial Sequences and Peptide Targets
 
 > ⚠️ **This section is critical if your target is a peptide fragment or partial sequence.**
@@ -199,8 +181,6 @@ When a peptide or partial sequence is used as the target, dbPTM cannot find a ma
 **Key rule for partial sequences:** PTM positions in the manual files must be **relative to your peptide/fragment** (1-indexed from position 1 of your FASTA sequence), NOT the full protein positions from UniProt.
 
 Example: If your peptide is residues 255–264 of a full protein, and the relevant PTM is at full-protein position 259, then the peptide-relative position is 259 − 255 + 1 = **5**.
-
----
 
 ## Usage
 
@@ -275,13 +255,9 @@ snakemake --configfile {output_dir}/config.yaml \
           --cleanup-metadata {output_dir}/target_ptm_dir/PROTEIN_Target_dbptm.csv
 ```
 
----
-
 # Manual PTM File Creation for Target Proteins
 
 > ⚠️ **IMPORTANT:** This process is **ONLY for TARGET proteins**, not POI. The pipeline automatically handles POI PTMs from dbPTM.
-
----
 
 ## When Manual Target PTM Files Are Needed
 
@@ -291,8 +267,6 @@ The pipeline automatically fetches POI PTMs from dbPTM and generates variants. H
 2. **Partial sequences as target** — only a domain or region of the full protein used
 3. **Proteins not in dbPTM** — novel or poorly characterized targets
 4. **Custom PTM testing** — testing specific PTM sites from literature
-
----
 
 ## File Format Requirements
 
@@ -318,8 +292,6 @@ UniProt_ID,Position,AA,PTM_Type
 P04049,3,S,Phosphorylation
 P04049,5,S,Phosphorylation
 ```
-
----
 
 ## Complete Example: RAF1 Peptide Validation
 
@@ -388,8 +360,6 @@ snakemake --configfile 14-3-3-RAF1-validation/config.yaml \
           --use-conda
 ```
 
----
-
 ## Important Guidelines
 
 ### Position Numbering:
@@ -411,8 +381,6 @@ snakemake --configfile 14-3-3-RAF1-validation/config.yaml \
 - Format: `{ID}_Target_dbptm.csv` and `{ID}_Target_processed.csv`
 - Case-sensitive
 
----
-
 ## POI vs Target PTM Handling
 
 | Aspect | POI (Protein of Interest) | Target Protein |
@@ -421,8 +389,6 @@ snakemake --configfile 14-3-3-RAF1-validation/config.yaml \
 | **Filtering** | Yes (8 variant strategies) | No filtering |
 | **Usage** | Generate 8 test variants | Used in positive control |
 | **Manual Creation** | ❌ Never needed | ✅ Required for peptides and partial sequences |
-
----
 
 ## Output Files
 
@@ -472,8 +438,6 @@ The three main result files are placed directly in the output directory for easy
 
 **3. `POI_TARGET_recommendations.txt`** - Human-readable recommendations
 
----
-
 ## Understanding Results
 
 ### The 8 Variant Strategies
@@ -521,8 +485,6 @@ A good prediction typically meets these criteria:
 - interface_PAE < 8 Å
 - contacts > 20
 
----
-
 ## Validation Controls
 
 For well-studied proteins with known PTM effects, use validation controls:
@@ -558,8 +520,6 @@ Test CAPTAF with these well-characterised PTM-regulated interactions:
    - Target: P46527 (p27Kip1, 198 aa, full sequence)
    - Expected: Baseline high ipTM (strong inhibitory complex), PTM variants lower ipTM
    - Key PTM: Thr187 phosphorylation on p27
-
----
 
 ## Troubleshooting
 
@@ -637,8 +597,6 @@ snakemake --configfile {output_dir}/config.yaml \
           --rerun-triggers mtime --cores 8 --use-conda
 ```
 
----
-
 ## Pipeline Workflow
 
 ```
@@ -663,8 +621,6 @@ Analysis and Ranking — ipTM, pTM, pLDDT, interface PAE, contacts
 Results — TSV ranking table, HTML report, recommendations
 ```
 
----
-
 ## Getting Help
 
 ```bash
@@ -683,7 +639,5 @@ Results — TSV ranking table, HTML report, recommendations
 
 For bug reports and questions, open an issue on GitHub:
 https://github.com/yourusername/captaf/issues
-
----
 
 **CAPTAF v1.0.0** — Universität des Saarlandes
