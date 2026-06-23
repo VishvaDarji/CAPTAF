@@ -2,8 +2,6 @@
 
 **CAPTAF** is an automated pipeline that systematically explores how post-translational modifications (PTMs) affect protein-protein binding by generating context-aware PTM variants and predicting their structures using AlphaFold3.
 
----
-
 ## Overview
 
 Post-translational modifications (PTMs) play critical roles in regulating protein-protein interactions, but predicting their structural impact remains challenging. CAPTAF addresses this by:
